@@ -1,9 +1,96 @@
-/* add css module styles here (optional) */
+input {
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
+}
 
-.test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
-  font-size: 2em;
-  text-align: center;
+input:required {
+  box-shadow: none;
+}
+/* .inputField { */
+/* display: inline; */
+/* position: relative; */
+/* padding: 8px 0; */
+/* } */
+.spanError {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  position: absolute;
+  left: 10px;
+  bottom: -60%;
+  color: #e63947b9;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.placeHolder {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: currentColor;
+  transition: all 0.3s ease;
+}
+
+.shadow {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) !important;
+}
+
+.inputBordered {
+  border-radius: 2px;
+  /* padding: 8px; */
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.inputBordered:focus {
+  border: 2px solid rgba(0, 0, 0, 0.7);
+}
+
+.inputBordered:valid + .placeHolder,
+.inputBordered:focus + .placeHolder {
+  top: 0%;
+  font-size: 12px;
+  color: #111;
+  background-color: #fff;
+  padding: 0 5px;
+}
+
+.inputFilled {
+  background-color: rgba(119, 119, 119, 0.6);
+  /* padding: 13px; */
+}
+.inputFilled:focus {
+  border-bottom: 3px solid #000;
+}
+.inputFilled:valid + .placeHolder,
+.inputFilled:focus + .placeHolder {
+  top: -3px;
+  font-size: 11px;
+  color: rgba(17, 17, 17, 0.8);
+}
+
+.inputUnderline {
+  /* padding: 12px; */
+  border-radius: 3px 0 0 3px;
+  background: linear-gradient(90deg, #333, #333) center bottom/0 2px no-repeat,
+    linear-gradient(90deg, rgba(119, 119, 119, 0.4), rgba(119, 119, 119, 0.4))
+      left bottom/100% 2px no-repeat,
+    linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
+  transition: background-size 0.3s;
+}
+.inputUnderline:valid + .placeHolder,
+.inputUnderline:focus + .placeHolder {
+  top: -5.5px;
+  font-size: 12px;
+  color: #111;
+  background-color: #fff;
+  padding: 0 5px;
+}
+
+.inputUnderline:focus {
+  background-size: 100% 2px, 100% 2px, 100%;
 }
