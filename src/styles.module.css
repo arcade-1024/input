@@ -1,20 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 input {
   border: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   letter-spacing: 1.5px;
   transition: all 0.3s ease-in-out;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
 }
 
 input:required {
   box-shadow: none;
 }
-/* .inputField { */
-/* display: inline; */
-/* position: relative; */
-/* padding: 8px 0; */
-/* } */
+.inputField {
+  display: inline;
+  position: relative;
+  padding: 8px 0;
+}
 .spanError {
   margin: 0;
   padding: 0;
@@ -59,10 +64,10 @@ input:required {
   padding: 0 5px;
 }
 
-.inputFilled {
-  background-color: rgba(119, 119, 119, 0.6);
+/* .inputFilled { */
+  /* background-color: rgba(119, 119, 119, 0.6); */
   /* padding: 13px; */
-}
+/* } */
 .inputFilled:focus {
   border-bottom: 3px solid #000;
 }
@@ -93,4 +98,18 @@ input:required {
 
 .inputUnderline:focus {
   background-size: 100% 2px, 100% 2px, 100%;
+}
+
+.inputNeo {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 8px;
+  font-size: 18px;
+}
+.inputContainer {
+  box-shadow: inset 5px 5px 7px #a2a4a5, inset -5px -5px 5px rgb(218, 218, 218, 0.5);
+  display: inline;
+  padding: 9px;
+  border-radius: 10px;
 }

@@ -9,11 +9,15 @@ interface Props {
   isBorder: boolean
   isFilled: boolean
   isUnderlined: boolean
+  isNeomorphic: boolean
   shadow: boolean
   FontSize: number
   FontWeight: number
   showError: boolean
   pad: number
+  borderColor: string
+  bgColor: string
+  FontColor: string
 }
 
 export const InputComponent = ({
@@ -22,11 +26,15 @@ export const InputComponent = ({
   isBorder,
   isFilled,
   isUnderlined,
+  isNeomorphic,
   shadow,
   FontSize,
   FontWeight,
   showError,
-  pad
+  pad,
+  borderColor,
+  bgColor,
+  FontColor
 }: Props) => {
   let Input = null
   const InpField = styled.input`
@@ -38,11 +46,29 @@ export const InputComponent = ({
   const Label = styled.label`
     padding: ${pad}px 0;
     position: relative;
-  `;
+    color: ${FontColor};
+  `
+  const FilledInput = styled.input`
+    background-color: ${bgColor};
+    border-color: ${borderColor};
+    color: ${FontColor};
+    display: inline;
+    font-size: ${FontSize}px;
+    font-weight: ${FontWeight};
+    padding: ${pad}px;
+  `
+  const BorderedInput = styled.input`
+    border-color: ${borderColor};
+    background-color: ${bgColor};
+    display: inline;
+    font-size: ${FontSize}px;
+    font-weight: ${FontWeight};
+    padding: ${pad}px;
+  `
   isBorder
     ? (Input = (
         <Label className={styles.inputField}>
-          <InpField
+          <BorderedInput
             type={type}
             className={`${styles.inputBordered} ${
               shadow ? styles.shadow : ' '
@@ -57,7 +83,7 @@ export const InputComponent = ({
   isFilled
     ? (Input = (
         <label className={styles.inputField}>
-          <InpField
+          <FilledInput
             type={type}
             className={`${styles.inputFilled} ${shadow ? styles.shadow : ' '}`}
             required
@@ -78,6 +104,17 @@ export const InputComponent = ({
           />
           <span className={styles.placeHolder}>{placeHolder}</span>
         </label>
+      ))
+    : null
+  isNeomorphic
+    ? (Input = (
+        <div className={styles.inputContainer}>
+          <input
+            type='text'
+            className={styles.inputNeo}
+            placeholder={placeHolder}
+          />
+        </div>
       ))
     : null
   return <div>{Input}</div>

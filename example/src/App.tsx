@@ -8,14 +8,18 @@ const App = () => {
     <InputComponent
       placeHolder='hello'
       type='text'
-      isBorder={true}
-      isFilled={false}
+      isBorder={false}
+      isFilled={true}
       isUnderlined={false}
+      isNeomorphic={false}
       shadow={true}
       FontSize={20}
       FontWeight={400}
       showError={false}
       pad={8}
+      bgColor={'#888'}
+      borderColor={'#000'}
+      FontColor={'#fff'}
     />
   )
 }
