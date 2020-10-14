@@ -8,18 +8,19 @@ const App = () => {
     <InputComponent
       placeHolder='hello'
       type='text'
-      isBorder={false}
-      isFilled={true}
+      isBorder={true}
+      isFilled={false}
       isUnderlined={false}
       isNeomorphic={false}
       shadow={true}
       FontSize={20}
       FontWeight={400}
-      showError={false}
+      showError={true}
       pad={8}
       bgColor={'#888'}
       borderColor={'#000'}
       FontColor={'#fff'}
+      ErrorText={'limit exceded'}
     />
   )
 }

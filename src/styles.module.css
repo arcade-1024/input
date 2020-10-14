@@ -20,17 +20,7 @@ input:required {
   position: relative;
   padding: 8px 0;
 }
-.spanError {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  position: absolute;
-  left: 10px;
-  bottom: -60%;
-  color: #e63947b9;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
+
 .placeHolder {
   position: absolute;
   left: 12px;
@@ -64,9 +54,24 @@ input:required {
   padding: 0 5px;
 }
 
+.spanError {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  position: absolute;
+  left: 10px;
+  bottom: -60%;
+  font-size: 0.8rem;
+  color: #e63947b9;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.spanError i {
+  margin-right: 4px;
+}
 /* .inputFilled { */
-  /* background-color: rgba(119, 119, 119, 0.6); */
-  /* padding: 13px; */
+/* background-color: rgba(119, 119, 119, 0.6); */
+/* padding: 13px; */
 /* } */
 .inputFilled:focus {
   border-bottom: 3px solid #000;
@@ -108,7 +113,8 @@ input:required {
   font-size: 18px;
 }
 .inputContainer {
-  box-shadow: inset 5px 5px 7px #a2a4a5, inset -5px -5px 5px rgb(218, 218, 218, 0.5);
+  box-shadow: inset 5px 5px 7px #a2a4a5,
+    inset -5px -5px 5px rgb(218, 218, 218, 0.5);
   display: inline;
   padding: 9px;
   border-radius: 10px;

@@ -18,6 +18,7 @@ interface Props {
   borderColor: string
   bgColor: string
   FontColor: string
+  ErrorText: string
 }
 
 export const InputComponent = ({
@@ -34,7 +35,8 @@ export const InputComponent = ({
   pad,
   borderColor,
   bgColor,
-  FontColor
+  FontColor,
+  ErrorText
 }: Props) => {
   let Input = null
   const InpField = styled.input`
@@ -75,8 +77,15 @@ export const InputComponent = ({
             } ${showError ? styles.error : ' '}`}
             required
           />
-          {showError ? <span className={styles.spanError}>Error</span> : ' '}
           <span className={styles.placeHolder}>{placeHolder}</span>
+          {showError ? (
+            <span className={styles.spanError}>
+              <i className='fas fa-exclamation'></i>
+              {ErrorText}
+            </span>
+          ) : (
+            ' '
+          )}
         </Label>
       ))
     : null
